@@ -102,7 +102,9 @@ public class MediaUtils
 
         if (photo == null)
         {
-            return null;
+            // We are returning the imageConfig instead of null to allow an error to happen without crashing
+            // https://github.com/Hurdlr/react-native-image-picker/pull/4
+            return imageConfig;
         }
 
         ImageConfig result = imageConfig;
